@@ -14,11 +14,11 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="create_btn">
+   <widget class="QPushButton" name="btn">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>190</y>
+      <x>180</x>
+      <y>240</y>
       <width>220</width>
       <height>80</height>
      </rect>
@@ -27,25 +27,8 @@
      <string notr="true">font: 75 16pt &quot;Times New Roman&quot;;</string>
     </property>
     <property name="text">
-     <string>Создать 
+     <string>Создать/изменить 
 данные о кофе</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="change_btn">
-    <property name="geometry">
-     <rect>
-      <x>190</x>
-      <y>290</y>
-      <width>220</width>
-      <height>80</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 75 16pt &quot;Times New Roman&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Изменить 
-данные  о кофе</string>
     </property>
    </widget>
    <widget class="QPushButton" name="close_btn">
@@ -68,8 +51,8 @@
    <widget class="QLabel" name="fon">
     <property name="geometry">
      <rect>
-      <x>-240</x>
-      <y>-150</y>
+      <x>-320</x>
+      <y>-100</y>
       <width>1071</width>
       <height>861</height>
      </rect>
@@ -82,8 +65,7 @@
     </property>
    </widget>
    <zorder>fon</zorder>
-   <zorder>create_btn</zorder>
-   <zorder>change_btn</zorder>
+   <zorder>btn</zorder>
    <zorder>close_btn</zorder>
   </widget>
  </widget>
