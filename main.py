@@ -38,6 +38,8 @@ class addEditCoffeeForm(QMainWindow):
         self.change_btn.clicked.connect(self.change_coffee)
         self.close_btn.clicked.connect(self.close_coffee)
         self.table_coffee.itemChanged.connect(self.item_changed)
+        self.kilo.setRange(1, 1000000)
+        self.cost.setRange(10,1000000)
         self.modified = {}
         self.titles = list()
         result = cur.execute("""SELECT * FROM coffee""").fetchall()
@@ -55,30 +57,13 @@ class addEditCoffeeForm(QMainWindow):
 
     def create_coffee(self):
         name_ok = self.check_name(self.name.text())
-        cost_ok = self.check_num(self.cost.text())
-        kilo_ok = self.check_num(self.kilo.text())
-        self.cost.setRange(1, 1000000)
-        self.kilo.setRange(1, 1000000)
-        print(self.cost.text(), self.kilo.text())
-        if name_ok and cost_ok and kilo_ok:
+        if name_ok:
             cur.execute(f"""INSERT INTO coffee(Сорт, Обжарка, Разновидность, Описание, Цена,  Объем)
-                            VALUES ('{self.name.currentText()}', '{self.stepen.currentText()}', '{self.razn.currentText()}', '{self.text.text()}', {int(self.cost.text())},  {int(self.kilo.text())})""")
+                            VALUES ('{self.name.text()}', '{self.stepen.currentText()}', '{self.razn.currentText()}', '{self.text.text()}', {int(self.cost.text())},  {int(self.kilo.text())})""")
             con.commit()
-            res = QMessageBox.information(self, "Оповещение", "Вы добавили новый подарок!",
+            res = QMessageBox.information(self, "Оповещение", "Вы добавили новый сорт кофе!",
                                           QMessageBox.StandardButton.Ok)
-            self.name.clear()
-            self.text.clear()
-            self.cost.setRange(1, 1000000)
-            self.kilo.setRange(1, 1000000)
-
-    def check_num(self, n):
-        try:
-            if n < 0:
-                raise WrongNameFormat
-            return True
-        except WrongNameFormat:
-            QMessageBox.warning(self, 'Ошибка', 'Значение не может быть меньше 0:', QMessageBox.StandardButton.Ok)
-            return False
+            self.update_wind()
 
     def check_name(self, name):  # проверка имени:
         try:
@@ -142,11 +127,17 @@ class addEditCoffeeForm(QMainWindow):
             QMessageBox.warning(self, "Ошибка", "Неверный формат ввода данных.",
                                 QMessageBox.StandardButton.Ok)
 
+    def update_wind(self):
+        self.open_back = addEditCoffeeForm()
+        self.open_back.show()
+        self.close()
+
+
     def item_changed(self, item):
         self.modified[self.titles[item.column()]] = item.text()
 
     def close_coffee(self):
-        self.open_main = addEditCoffeeForm()
+        self.open_main = Coffee()
         self.open_main.show()
         self.close()
 
