@@ -1,13 +1,14 @@
 import sys
 import sqlite3
-from PyQt6 import uic
 from PyQt6.QtWidgets import QMainWindow, QApplication, QMessageBox, QTableWidgetItem
+from main_ui import Ui_MainWindow
+from addEditCoffeeForm_ui import Ui_MainWindow_1
 
 
-class Coffee(QMainWindow):
+class Coffee(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('main.ui', self)
+        self.setupUi(self)
         self.initUI()
 
     def initUI(self):
@@ -23,10 +24,10 @@ class Coffee(QMainWindow):
         self.close()
 
 
-class addEditCoffeeForm(QMainWindow):
+class addEditCoffeeForm(QMainWindow, Ui_MainWindow_1):
     def __init__(self):
         super().__init__()
-        uic.loadUi('addEditCoffeeForm.ui', self)
+        self.setupUi(self)
         self.initUI()
 
     def initUI(self):
@@ -163,7 +164,7 @@ class MyTypeError(Exception):
 
 
 if __name__ == '__main__':
-    con = sqlite3.connect('coffee.sqlite')
+    con = sqlite3.connect("data/coffee.sqlite")
     cur = con.cursor()
     app = QApplication(sys.argv)
     ex = Coffee()
