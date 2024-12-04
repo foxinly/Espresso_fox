@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="fon_2">
+    <property name="geometry">
+     <rect>
+      <x>-340</x>
+      <y>-160</y>
+      <width>1361</width>
+      <height>1151</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 178, 102, 255), stop:0.55 rgba(235, 148, 61, 255), stop:0.98 rgba(0, 0, 0, 255), stop:1 rgba(0, 0, 0, 0))</string>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>30</y>
+      <width>521</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="styleSheet">
+        <string notr="true">font: 10pt &quot;Times New Roman&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Разновидность</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="styleSheet">
+        <string notr="true">font: 10pt &quot;Times New Roman&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Цена (р)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="styleSheet">
+        <string notr="true">font: 10pt &quot;Times New Roman&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Степень прожарки</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="styleSheet">
+        <string notr="true">font: 10pt &quot;Times New Roman&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Название сорта:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1" colspan="2">
+      <widget class="QComboBox" name="razn"/>
+     </item>
+     <item row="1" column="1" colspan="2">
+      <widget class="QComboBox" name="stepen">
+       <property name="styleSheet">
+        <string notr="true">font: 10pt &quot;Times New Roman&quot;;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_5">
+       <property name="styleSheet">
+        <string notr="true">font: 10pt &quot;Times New Roman&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Объем упаковки (г)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1" colspan="2">
+      <widget class="QSpinBox" name="cost">
+       <property name="styleSheet">
+        <string notr="true">font: 10pt &quot;Times New Roman&quot;;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1" colspan="2">
+      <widget class="QLineEdit" name="name">
+       <property name="styleSheet">
+        <string notr="true">font: 10pt &quot;Times New Roman&quot;;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1" colspan="2">
+      <widget class="QSpinBox" name="kilo"/>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_6">
+       <property name="styleSheet">
+        <string notr="true">font: 10pt &quot;Times New Roman&quot;;</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Описание вкуса&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1" colspan="2">
+      <widget class="QLineEdit" name="text"/>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="create_btn">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>220</y>
+      <width>521</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 12pt &quot;Times New Roman&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Добавить кофе</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="change_btn">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>490</y>
+      <width>521</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 12pt &quot;Times New Roman&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Редактировать кофе</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="close_btn">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>540</y>
+      <width>181</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 14pt &quot;Times New Roman&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Закрыть 
+вкладку</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="table_coffee">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>270</y>
+      <width>519</width>
+      <height>218</height>
+     </rect>
+    </property>
+    <column>
+     <property name="text">
+      <string>ID</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Сорт</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Обжарка</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Молотый/В зернах</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Описание</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Цена (р)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Объем (г)</string>
+     </property>
+    </column>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
